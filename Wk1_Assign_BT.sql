@@ -1,4 +1,4 @@
-#Assignment 1 - SQL BRIDGE - W.Brian Taing
+#Assignment 1 - SQL BRIDGE submitted by W.Brian Taing
 
 # 1. Which destination in the flights database is the furthest distance away, based on information in the flights table.
 # Show the SQL query(s) that support your conclusion.
@@ -38,7 +38,7 @@ SELECT carrier, COUNT(flight) FROM flights GROUP BY carrier ORDER BY COUNT(fligh
 
 # 6. Show only the top 5 airlines, by number of flights, ordered by number of flights in descending order.
 
-# Ans: Added "LIMIT 5" after qSQL statement to question 5.
+# Ans: Added "LIMIT 5" after SQL statement to question 5.
 SELECT carrier, COUNT(flight) FROM flights GROUP BY carrier ORDER BY COUNT(flight) DESC LIMIT 5;
 
 
