@@ -11,12 +11,11 @@ SELECT * FROM flights ORDER BY distance DESC;
 # the most number of seats? Show the SQL statement(s) that support your result.
 
 # Ans: There are four different number of engines: 1, 2, 3, and 4. 
-#      The most number of seats for respective engines are: 16 seats for engine 1; 400 for engine 2; 379 for engine 3; and 16 for engine 1.
+#      The most number of seats for respective engines are: Engine 1 - model 150 - 16 seats; Engine 2 - EMB-145XR - 400 seats; Engine 3 - A330-223 - 379 seats; Engine 4 - A340-313 - 450 seats.
 
 SELECT DISTINCT(engines) FROM planes;
 
-SELECT distinct(engines), max(seats) FROM planes GROUP BY engines ORDER BY engines DESC;
-
+SELECT distinct(engines), max(seats), model FROM planes GROUP BY engines ORDER BY engines DESC;
 
 # 3. Show the total number of flights.
 
