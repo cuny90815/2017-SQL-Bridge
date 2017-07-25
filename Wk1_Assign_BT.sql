@@ -3,7 +3,7 @@
 # 1. Which destination in the flights database is the furthest distance away, based on information in the flights table.
 # Show the SQL query(s) that support your conclusion.
 
-# Ans: JFK to HNL (New York to Honolulu, HI) is the furthest distance flight amounting to 4,983 miles
+# Ans: JFK to HNL (New York, NY to Honolulu, HI) is the furthest distance flight amounting to 4,983 miles
 SELECT * FROM flights ORDER BY distance DESC;
 
 
@@ -11,13 +11,17 @@ SELECT * FROM flights ORDER BY distance DESC;
 # the most number of seats? Show the SQL statement(s) that support your result.
 
 # Ans: There are four different number of engines: 1, 2, 3, and 4. 
+#      The most number of seats for respective engines are: 16 seats for engine 1; 400 for engine 2; 379 for engine 3; and 16 for engine 1.
+
 SELECT DISTINCT(engines) FROM planes;
+
+SELECT distinct(engines), max(seats) FROM planes GROUP BY engines ORDER BY engines DESC;
 
 
 # 3. Show the total number of flights.
 
 # Ans: There are a total of 336,776 flights
-SELECT count(flight) FROM flights;
+SELECT COUNT(flight) FROM flights;
 
 
 # 4. Show the total number of flights by airline (carrier).
